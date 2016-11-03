@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @notification.email %>
+</p>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>SN</th>
+      <th>Status</th>
+      <th>Subject</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% items = @emails.to_h['items']%>
+    <% unless items.empty? %>
+      <% items.each.with_index(1) do | item, index | %>
+        <tr>
+          <td><%= index %></td>
+          <td><%= item['event'].titleize %></td>
+          <td><%= item['message']['headers']['subject'] %></td>
+          <td><%= link_to 'View Message', "javascript:alert('Coming soon');" %></td>
+        </tr> 
+      <% end %>
+    <% else %>
+      <tr><td colspan="4">No item found.</td></tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', notifications_path %>

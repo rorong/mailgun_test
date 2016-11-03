@@ -1,0 +1,4 @@
+development:
+  mailgun_api_key: ''
+  mailgun_domain: ''
+  sender_email: ''

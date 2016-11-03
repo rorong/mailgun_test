@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: mailgunapp_testjob_dev
+
+test:
+  <<: *default
+  database: mailgunapp_testjob_test
