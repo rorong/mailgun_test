@@ -11,7 +11,7 @@
       <th>SN</th>
       <th>Status</th>
       <th>Subject</th>
-      <th>Action</th>
+      <th>Campaign ID</th>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +22,7 @@
           <td><%= index %></td>
           <td><%= item['event'].titleize %></td>
           <td><%= item['message']['headers']['subject'] %></td>
-          <td><%= link_to 'View Message', "javascript:alert('Coming soon');" %></td>
+          <td><%= item['campaigns'].first["id"] unless item['campaigns'].first.nil? %></td>
         </tr> 
       <% end %>
     <% else %>
