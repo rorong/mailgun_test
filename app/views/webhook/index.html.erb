@@ -1,2 +1,21 @@
-<h1>Webhook#index</h1>
-<p>Find me in app/views/webhook/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Webhooks</h1>
+
+<table border="1">
+  <thead>
+    <tr align="left">
+      <th>Event Type</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @webhooks.each do |webhook| %>
+      <tr>
+        <td><%= webhook.event_type %></td>
+        <td><%= webhook.data %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

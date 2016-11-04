@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <!-- header -->
+    <div>
+      <%= link_to 'Notification Mail', notifications_path %>
+      <%= link_to 'Webhooks', webhook_index_path %>
+    </div>
+
     <%= yield %>
   </body>
 </html>
