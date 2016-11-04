@@ -20,5 +20,6 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore db config
+# Ignore config
 config/database.yml
+config/application.yml

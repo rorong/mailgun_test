@@ -15,7 +15,7 @@
     </tr>
   </thead>
   <tbody>
-    <% items = @emails.to_h['items']%>
+    <%= items = @emails.to_h['items']%>
     <% unless items.empty? %>
       <% items.each.with_index(1) do | item, index | %>
         <tr>

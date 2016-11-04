@@ -4,7 +4,7 @@ class NotificationMailgun
   end
 
   def send_email
-    RestClient::Request.execute( method: :post, url: "https://api:#{mg_api_key}@api.mailgun.net/v3/#{mailgun_domain}/messages", payload: {from: ENV['sender_email'], to: @notification.email, subject: @notification.subject, text: @notification.text, 'o:campaign' => @notification.campaign_id, multipart: true} )
+    RestClient::Request.execute( method: :post, url: "https://api:#{mg_api_key}@api.mailgun.net/v3/#{mailgun_domain}/messages", payload: {from: ENV['sender_email'], to: @notification.email, subject: @notification.subject, text: @notification.text, 'o:campaign' => @notification.campaign_id, 'o:tracking' => true, multipart: true} )
   end
 
   def fetch_emails
